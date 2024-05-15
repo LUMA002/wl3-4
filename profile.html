@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Dealership</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<header class="bg-primary py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="text-center m-0"><a href="index.html"  class="text-white text-decoration-none">Car Dealership</a></h1>
+        <div>
+            <a href="basket.html" class="text-white me-3"><i class="fas fa-shopping-cart"></i></a>
+            <a href="news.html" class="text-white me-3"><i class="fas fa-newspaper"></i></a>
+            <div class="d-inline-flex dropdown me-3" id="profileDropdown" >
+                <button class="nav-icon" type="button" id="profileDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="profileDropdownBtn">
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<main class="container" id="storeContainer">
+    <h1 class="text-primary-emphasis h1">Profile</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+
+            <ul id="profileUl">
+
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="d-flex align-items-center ">
+                <h4 class="store-h4" onclick="document.getElementById('chartType').click()">Chart Type</h4>
+                <div class="dropdown">
+                    <button class="btn btn-link d-inline-block ps-2" id="chartType" type="button" data-bs-toggle="collapse" data-bs-target="#chartTypes" aria-expanded="false" aria-controls="chartTypes">
+                        <span class="bi bi-chevron-down"></span>
+                    </button>
+                    <ul class="dropdown-menu collapse" id="chartTypes">
+                        <li class="dropdown-item active" onclick="event.stopPropagation(); selectChart(this)">Pie Chart</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); selectChart(this)">Bar Chart</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); selectChart(this)">Line Chart</li>
+                    </ul>
+                </div>
+            </div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</main>
+<a id="return-to-top"><i class="bi bi-chevron-up"></i></a>
+
+<section>
+    <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modal-content">
+            </div>
+        </div>
+    </div>
+</section>
+
+<p id="basketItemsCount" style="visibility: hidden">0</p>
+
+<footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="news.html" class="nav-link px-2 text-muted">News</a></li>
+        <li class="nav-item"><a href="basket.html" class="nav-link px-2 text-muted">Basket</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Account</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2024 Car Dealership</p>
+</footer>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="auth.js"></script>
+<script src="node_modules/chart.js/dist/chart.umd.js"></script>
+<script src="profile.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

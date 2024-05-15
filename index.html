@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Dealership</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<header class="bg-primary py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1 class="text-center m-0"><a href="index.html"  class="text-white text-decoration-none">Car Dealership</a></h1>
+    <p id="basketItemsCount">0</p>
+
+    <div>
+      <a href="basket.html" class="text-white me-3"><i class="fas fa-shopping-cart"></i></a>
+      <a href="news.html" class="text-white me-3"><i class="fas fa-newspaper"></i></a>
+      <div class="d-inline-flex dropdown me-3" id="profileDropdown" >
+        <button class="nav-icon" type="button" id="profileDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="profileDropdownBtn">
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="py-4">
+  <section id="filter-panel" class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="year-filter" class="form-label">Sort by Year:</label>
+        <select class="form-select" id="year-filter">
+          <option value="all">All</option>
+          <option value="asc">Newest First</option>
+          <option value="desc">Oldest First</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="engine-filter" class="form-label">Sort by Engine Size:</label>
+        <select class="form-select" id="engine-filter">
+          <option value="all">All</option>
+          <option value="asc">Largest First</option>
+          <option value="desc">Smallest First</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="class-filter" class="form-label">Filter by Class:</label>
+        <select class="form-select" id="class-filter">
+          <option value="all">All</option>
+          <option value="C">Class C</option>
+          <option value="D">Class D</option>
+          <option value="S">Class S</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid" >
+    <div id="car-list" class="row d-flex justify-content-center">
+      <!-- Card content -->
+    </div>
+  </section>
+</main>
+
+<!-- Modal for subscription offer -->
+<!--<div id="subscription-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Subscribe for Updates</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Subscribe to our newsletter to receive updates on new car arrivals and special offers.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="subscribe-btn">Subscribe</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Thanks</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+&lt;!&ndash; Modal for advertisement &ndash;&gt;
+<section id="specialOfferToast" class="toast position-fixed top-0 start-50 translate-middle-x" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" style="width: 500px;">
+  <div class="toast-header">
+    <h6 class="me-auto">Special offer!</h6>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body d-flex">
+    <h5 class="me-auto">Subscribe to our notifications to receive special bonuses!</h5>
+    <button class="btn btn-primary" onclick="onSpecialOfferAgree()">Subscribe</button>
+    <button class="btn btn-secondary" onclick="onSpecialOfferReject()">No, Thanks</button>
+  </div>
+</section>
+
+
+&lt;!&ndash; Modal for advertisement &ndash;&gt;
+<div id="advertisement-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title">Special Offer!</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" id="close-ad-btn"></button>
+      </div>
+      <div class="modal-body">
+        <p>Zero customs duty for cars from abroad! Limited time offer!</p>
+        <p>Time left to close: <span id="countdown">5</span> seconds</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://example.com" class="btn btn-primary" id="visit-site-btn" target="_blank" rel="noopener noreferrer">Visit Site</a>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<section>
+  <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" id="modal-content">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer class="bg-primary text-white py-4">
+  <div class="container">
+    <div class="text-center">
+      &copy; 2024 Car Dealership. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script src="common.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

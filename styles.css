@@ -1,0 +1,410 @@
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import 'node_modules/bootstrap/dist/css/bootstrap.css';
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons.min.css';
+@import 'node_modules/bootswatch/dist/lux/bootstrap.min.css';
+
+:root {
+  --block-gradient: linear-gradient(to bottom right, #eae6e6, #fcf4f1);
+  --bg-color: aliceblue;
+  --border-color: #c2c1c1;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff; 
+}
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+header {
+  color: #fff; 
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+main {
+  background-color: #fff;
+}
+
+/* Styles for filter panel */
+#filter-panel {
+  padding: 20px;
+  background-color: #f8f9fa; /* Light gray color */
+  border-radius: 10px;
+}
+
+/* Styles for car list */
+/* #car-list {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.card {
+  width: 32%;
+  margin-right: 0.4em;
+}
+
+/* Modal styles */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-footer {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    width: 90%;
+  }
+}
+
+/*!**/
+/*===========================================================*/
+/*    Logo*/
+/*===========================================================*/
+/**!*/
+
+/*.a-logo {*/
+/*  text-decoration: none !important;*/
+/*  color: wheat; !important;*/
+/*}*/
+
+/*
+===========================================================
+    News
+===========================================================
+*/
+
+.news-item {
+  cursor: pointer;
+}
+#newsBtn {
+  color: black;
+  text-decoration: none;
+}
+
+.news-btn:hover {
+  color: var(--bs-primary);
+}
+
+.card-news {
+  width: 100%;
+}
+
+/*
+===========================================================
+    Basket
+===========================================================
+*/
+#basketItemsCount {
+  position: absolute;
+  font-size: 0.6em;
+  color: black;
+  z-index: 9999999;
+  background-color: white;
+  border-radius: 100%;
+  padding: 0.7em; /* Adjust this value as needed */
+  width: 20px; /* Add this */
+  height: 20px; /* Add this */
+  display: flex; /* Add this */
+  align-items: center;
+  justify-content: center; /* Add this */
+  right: 30.4em;
+  top: 4.1em;
+  font-weight: 600;
+}
+
+
+.basket-table {
+  width: 90%;
+  background: var(--block-gradient);
+}
+
+.basket-table thead {
+  height: 3em;
+  font-size: 1.1em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.basket-table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.basket-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.basket-table tfoot {
+  border-top: 1px solid var(--border-color);
+}
+
+.basket-table thead th {
+  width: 14%;
+}
+.basket-table thead th:first-child {
+  width: 58%;
+}
+
+.basket-table thead th,
+.basket-table tbody th,
+.basket-table tbody td {
+  border-right: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.basket-table thead th:last-child,
+.basket-table tbody th:last-child,
+.basket-table tbody td:last-child {
+  border-right: none;
+}
+
+.basket-row-header {
+  display: flex;
+  align-items: center;
+}
+.basket-row-header img {
+  margin: 0.6em 0 0.6em 2em;
+  height: 18em;
+  width: 20em;
+  object-fit: cover;
+}
+.basket-row-header p {
+  margin: auto 0 auto auto;
+}
+
+.basket-row-header i.bi-trash {
+  color: #6b6b72;
+  margin-top: 0.2em;
+  margin-left: 0.6em;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.basket-row-header i.bi-trash:hover {
+  color: #da5656;
+}
+
+#basketItemsCount {
+  visibility: hidden;
+}
+
+#basketTbody {
+  font-size: 1.1em;
+}
+
+.basket-table tfoot {
+  font-size: 1.2em;
+}
+
+#basketTbody .bi-dash,
+#basketTbody .bi-plus {
+  background-color: #eed1d0;
+  margin: 0 0.7em;
+  padding: 0.1em 0.25em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#basketTbody .bi-dash:hover,
+#basketTbody .bi-plus:hover {
+  background-color: #e3d0ce;
+
+}
+
+.basket-purchase {
+  margin-top: 1em;
+  width: 90%;
+}
+
+.basket-purchase button {
+  width: 20%;
+}
+
+@media screen and (max-width: 1200px) {
+  #basketTbody {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #basketTbody {
+    font-size: 0.9em;
+  }
+
+  #basketTbody .bi-dash,
+  #basketTbody .bi-plus {
+    margin: 0 0.3em;
+    padding: 0.1em 0.25em;
+  }
+
+  .basket-table {
+    width: 100%;
+  }
+
+  .basket-table tfoot {
+    font-size: 1.05em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .basket-table thead {
+    height: 2.5em;
+    font-size: 0.9em;
+  }
+  .basket-row-header img {
+    margin: 0.4em 0 0.4em 1em;
+    height: 14em;
+    width: 9em;
+    object-fit: cover;
+  }
+  .basket-table thead th {
+    width: 18%;
+  }
+  .basket-table thead th:first-child {
+    width: 46%;
+  }
+  .basket-row-header p {
+    font-size: 0.9em;
+  }
+
+  .basket-table tfoot {
+    font-size: 0.95em;
+  }
+}
+@media screen and (max-width: 475px) {
+  .basket-table thead {
+    height: 2.5em;
+    font-size: 0.9em;
+  }
+  .basket-row-header img {
+    margin: 0.4em 0 0.4em 1em;
+    height: 12em;
+    width: 7em;
+    object-fit: cover;
+  }
+  .basket-table thead {
+    height: 2.5em;
+    font-size: 0.8em;
+  }
+  .basket-row-header p {
+    font-size: 0.8em;
+  }
+
+  #basketTbody {
+    font-size: 0.8em;
+  }
+
+  .basket-table tfoot {
+    font-size: 0.85em;
+  }
+}
+
+/*
+===========================================================
+    Profile
+===========================================================
+*/
+
+#profileUl {
+  list-style: none;
+  text-align: center;
+  width: 20em;
+}
+
+#profileUl li:first-child img {
+  margin: -1em;
+  height: 10em;
+}
+
+#profileUl li {
+  border: 1px solid var(--border-color);
+  padding: 0.6em 0;
+}
+
+#chartType {
+  background-color: transparent;
+  border: none;
+}
+
+/*
+===========================================================
+    Modal
+===========================================================
+
+*/
+
+.modal-body p.text-danger {
+  font-size: 0.8em;
+  margin-left: 0.6em;
+  display: none;
+}
+
+.modal-body h2.text-danger {
+  display: none;
+}
+
+.modal-body label,
+.modal-body button {
+  margin-top: 1em;
+}
+
+div#modal-content input {
+  background-color: #fff7f7;
+}
+
+/*
+===========================================================
+    Scroll Arrow
+===========================================================
+
+*/
+#return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--bs-primary);
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  border-radius: 35px;
+  display: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+#return-to-top:hover {
+  background-color: #403d3d;
+}
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
+}
